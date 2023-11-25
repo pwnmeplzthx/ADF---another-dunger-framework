@@ -16,15 +16,29 @@ export class MainView extends AbstractView {
         this.appState = appState;
         // бинд контекста this.useAppState.bind(this)
         this.appState = onChange(this.appState, this.useAppState.bind(this))
+        this.state = onChange(this.state, this.useState.bind(this))
         this.setTitle('Поиск книг');
     }
 
     useAppState(path) {
-        console.log(path);
         if (path === 'favorites') {
             this.render();
         }
     }
+
+    async useState(path) {
+        if (path === 'searchQuery') {
+            this.state.isLoading = true;
+            const data = await this.loadList(this.state.searchQuery, this.state.offSet);
+            this.state.isLoading - false;
+            this.state.list = data.docs;
+        }
+    }
+
+    async loadList(q, offset) {
+		const res = await fetch(`https://openlibrary.org/search.json?q=${q}&offset=${offset}`);
+		return res.json();
+	}
 
     render() {
         const main = document.createElement('div');
