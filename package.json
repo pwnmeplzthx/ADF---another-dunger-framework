@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c --watch",
     "start": "live-server",
-    "start:dev": "concurrently \"npm build\" \"npm run start\""
+    "start:dev": "concurrently \"npm run build\" \"npm run start\""
   },
   "repository": {
     "type": "git",
