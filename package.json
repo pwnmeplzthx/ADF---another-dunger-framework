@@ -1,0 +1,25 @@
+{
+  "name": "another-dunger-framework",
+  "version": "1.0.0",
+  "description": "javascript prictice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwnmeplzthx/ADF---another-dunger-framework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pwnmeplzthx/ADF---another-dunger-framework/issues"
+  },
+  "homepage": "https://github.com/pwnmeplzthx/ADF---another-dunger-framework#readme",
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "rollup": "^4.5.2"
+  }
+}
